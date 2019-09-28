@@ -1,0 +1,8 @@
+check process ufeelme matching "springboot-app"
+  group GROUP
+
+  start program = "/bin/systemctl start springboot-app"
+  stop program = "/bin/systemctl stop springboot-app"
+
+  if failed host localhost port 8080 then restart
+  if 5 restarts within 5 cycles then timeout
