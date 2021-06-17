@@ -1,16 +1,16 @@
 check process mysqld with pidfile /var/run/mysqld/mysqld.pid
-   group mysql
-   group mysql
+  group mysql
+  group mysql
 
-   start program = "/etc/init.d/mysql start"
-   stop  program = "/etc/init.d/mysql stop"
+  start program = "/etc/init.d/mysql start"
+  stop  program = "/etc/init.d/mysql stop"
 
-   if failed host localhost port 3306 protocol mysql username "root" password "ki89hLo9" with timeout 15 seconds for 3 times within 4 cycles then restart
-   if failed unixsocket /var/run/mysqld/mysqld.sock protocol mysql username "root" password "ki89hLo9" for 3 times within 4 cycles then restart
-   if 5 restarts with 5 cycles then alert
+  if failed host localhost port 3306 protocol mysql username "root" password "***" with timeout 15 seconds for 3 times within 4 cycles then restart
+  if failed unixsocket /var/run/mysqld/mysqld.sock protocol mysql username "root" password "***" for 3 times within 4 cycles then restart
+  if 5 restarts with 5 cycles then alert
 
-   depend mysql_rc
+  depend mysql_rc
 
 check file mysql_rc with path /etc/init.d/mysql
-   group mysql
-   include /etc/monit/templates/rootbin
+  group mysql
+  include /etc/monit/templates/rootbin
