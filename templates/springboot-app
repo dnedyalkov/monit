@@ -5,4 +5,4 @@ check process ufeelme matching "springboot-app"
   stop program = "/bin/systemctl stop springboot-app"
 
   if failed host localhost port 8080 then restart
-  if 5 restarts within 5 cycles then timeout
+  if 5 restarts within 5 cycles then alert

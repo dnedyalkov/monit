@@ -6,4 +6,4 @@ check process mongodb with pidfile /var/lib/mongodb/mongod.lock
   stop program = "/bin/systemctl stop mongod"
 
   if failed host 127.0.0.1 port 28017 protocol http and request "/" with timeout 10 seconds then restart
-  if 5 restarts within 5 cycles then timeout
+  if 5 restarts within 5 cycles then alert

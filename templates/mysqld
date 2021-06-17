@@ -7,7 +7,7 @@ check process mysqld with pidfile /var/run/mysqld/mysqld.pid
 
    if failed host localhost port 3306 protocol mysql username "root" password "ki89hLo9" with timeout 15 seconds for 3 times within 4 cycles then restart
    if failed unixsocket /var/run/mysqld/mysqld.sock protocol mysql username "root" password "ki89hLo9" for 3 times within 4 cycles then restart
-   if 5 restarts with 5 cycles then timeout
+   if 5 restarts with 5 cycles then alert
 
    depend mysql_rc
 
