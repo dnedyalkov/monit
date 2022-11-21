@@ -1,0 +1,7 @@
+check process "ufeelme-notifications" matching "notifications-0.0.1-SNAPSHOT"
+  group dnedyalkov
+
+  start program = "/bin/systemctl start ufeelme-notifications"
+  stop program = "/bin/systemctl stop ufeelme-notifications"
+
+  if 5 restarts within 5 cycles then alert

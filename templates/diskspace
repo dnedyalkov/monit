@@ -1,2 +1,2 @@
 check device rootfs with path /dev/vda1
-  if space usage > 60% then alert
+    if space usage > 60% then alert

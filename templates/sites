@@ -1,0 +1,17 @@
+check host mx.ufeel.me with address mx.ufeel.me
+  if failed port 443 protocol https and request / then alert
+
+check host ufeel.me with address ufeel.me
+  if failed port 443 protocol https and request / then alert
+
+check host stihovebg.com with address stihovebg.com
+  if failed port 443 protocol https and request / then alert
+
+check host api.ufeel.me with address api.ufeel.me
+  if failed ping then alert
+
+check host img.ufeel.me with address img.ufeel.me
+  if failed ping then alert
+
+check host chat.ufeel.me with address chat.ufeel.me
+  if failed ping then alert
