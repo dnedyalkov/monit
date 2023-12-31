@@ -1,0 +1,6 @@
+check process rabbitmq matching "erlang"
+  start program = "/bin/systemctl start rabbitmq-server"
+  stop program = "/bin/systemctl stop rabbitmq-server"
+
+  if failed port 5672 type tcp then restart
+  if 5 restarts with 5 cycles then alert

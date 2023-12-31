@@ -1,0 +1,3 @@
+check host ufeel.me_socketio with address localhost
+  if failed port 4001
+  then alert

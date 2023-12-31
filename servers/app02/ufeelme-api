@@ -1,0 +1,8 @@
+check process "ufeelme-api" matching "api-1.0.0-SNAPSHOT"
+  group dnedyalkov
+
+  start program = "/bin/systemctl start ufeelme-api"
+  stop program = "/bin/systemctl stop ufeelme-api"
+
+  if failed host localhost port 8080 then restart
+  if 5 restarts within 5 cycles then alert

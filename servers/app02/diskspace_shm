@@ -1,0 +1,2 @@
+check device shm with path /dev/shm
+    if space usage > 50% then alert

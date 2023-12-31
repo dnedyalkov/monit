@@ -1,0 +1,3 @@
+check host ufeel.me_api with address api.ufeel.me
+  if failed port 443
+  then alert
